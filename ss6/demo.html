@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính diện tích hình tròn</h1>
+<input id="banKinh" oninput="tinhDienTich()" placeholder="Nhập bán kính hình tròn">
+<button onclick="tinhDienTich()">Tính diện tích</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    // let toan = +prompt("Nhập điểm toán");
+    // let ly = parseFloat(prompt("Nhập điểm lý"));
+    // let hoa = prompt("Nhập điểm hoá")*1;
+    // let diemTrungBinh= (toan+ly+hoa)/3;
+    // let xacNhan = confirm("Bạn có muốn hiển thị từng điểm sau khi nhập không?")
+    // // if (xacNhan==true){
+    // //     alert("điểm toán : "+toan +" lý:"+ ly+ "hoa: "+hoa);
+    // // }
+    // alert("điểm trung bình là : "+diemTrungBinh);
+    // tính diện tích hình tròn
+
+    function tinhDienTich() {
+        let r = document.getElementById('banKinh').value;
+        let s = r * r * 3.14;
+        document.getElementById("ketQua").innerHTML = "<b>diện tính hình tròn : </b>" + s
+    }
+
+    // phân biệt .innerText và innerHml
+
+
+</script>
+</html>
