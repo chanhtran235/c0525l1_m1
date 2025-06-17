@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+<div class="container">
+  <div class="form-row">
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input type="number" id="amount" value="1" step="0.1" min="0" />
+    </div>
+
+    <div class="form-group">
+      <label for="fromCurrency">From Currency</label>
+      <select id="fromCurrency">
+        <option value="VND">VietNam</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="JPY">JPY</option>
+        <option value="GBP">GBP</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="toCurrency">To Currency</label>
+      <select id="toCurrency">
+        <option value="USD">USD</option>
+        <option value="VND">VietNam</option>
+        <option value="EUR">EUR</option>
+        <option value="JPY">JPY</option>
+        <option value="GBP">GBP</option>
+      </select>
+    </div>
+    <button class="convert-btn" onclick="convertCurrency()">Convert</button>
+  </div>
+
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+  // Tỷ giá hối đoái cố định (so với USD)
+  const exchangeRates = {
+    VND: 25000, // 1 USD = 25,000 VND
+    USD: 1, // 1 USD = 1 USD
+    EUR: 0.86, // 1 USD = 0.86 EUR
+    JPY: 144, // 1 USD = 144 JPY
+    GBP: 0.73, // 1 USD = 0.73 GBP
+  };
+
+  function convertCurrency() {
+    // Lấy giá trị từ form
+    const amount = parseFloat(document.getElementById("amount").value);
+    const fromCurrency = document.getElementById("fromCurrency").value;
+    const toCurrency = document.getElementById("toCurrency").value;
+    const resultDiv = document.getElementById("result");
+
+    // Kiểm tra input
+    if (isNaN(amount) || amount <= 0) {
+      resultDiv.innerHTML = "Result: Please enter a valid amount";
+      return;
+    }
+
+    // Chuyển đổi tiền tệ
+    // Bước 1: Chuyển từ đồng tiền gốc sang USD
+    const amountInUSD = amount / exchangeRates[fromCurrency];
+
+    // Bước 2: Chuyển từ USD sang đồng tiền đích
+    const convertedAmount = amountInUSD * exchangeRates[toCurrency];
+
+    // Hiển thị kết quả với độ chính xác cao
+    resultDiv.innerHTML = `Result: ${convertedAmount} ${toCurrency}`;
+  }
+
+  // Tự động convert khi trang load
+  window.addEventListener("load", function () {
+    convertCurrency();
+  });
+</script>
+</body>
+</html>
