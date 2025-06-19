@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // nhập điểm
+    // alert("bắt đầu");
+    let lyThuyet = + prompt("nhập điểm lý thuyết");
+    let thucHanh = + prompt("nhập điểm thực hành");
+    let phongVan = + prompt("nhập điểm phỏng vấn");
+    let soBuoiVangNghi= +prompt("nhập số buổi vắng nghỉ")
+    let diemTrungBinh =(lyThuyet+thucHanh + phongVan)/3;
+    // xep loai
+
+    // if (diemTrungBinh>=80){
+    // }else if (diemTrungBinh>=70) {
+    //     alert("khá");
+    // }else if(diemTrungBinh>=50){
+    //     alert("trung bình")
+    // }else {
+    //     alert("Yếu")
+    // }
+
+    if (diemTrungBinh>=75){
+        alert("pass");
+    }else {
+        alert("fail");
+    }
+
+    // cú pháp toán tử 3 ngôi
+    (diemTrungBinh>=75)? alert("pass"):alert("fail");
+
+</script>
+</body>
+</html>
