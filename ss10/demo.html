@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // in ra 1000 lần "hello"
+
+    // for( let cnt =0;cnt<10;cnt++) {
+    //     document.write("hello<br>");
+    // }
+    // // sử dụng while
+    // let i = 0;
+    // while (i<10){
+    //     document.write("hello<br>");
+    //     i++;
+    // }
+
+    // let n = + prompt("nhập số nguyên n");
+    // while (n<=0){
+    //     n = + prompt("nhập chưa đúng, yêu cầu nhập lại n");
+    // }
+    // alert("bạn đã nhập đúng")
+    //
+    // let m;
+    // do {
+    //     m = + prompt("nhập số nguyên");
+    // }while (m<=0);
+    // alert("bạn nhập đúng");
+
+    // nhập vào một gãy số nguyên dương có 10 số
+    // tìm giá trị lớn nhất của dãy số đó.
+    // let n;
+    // let max=0
+    // let display ="";
+    // for (let i = 1; i <=5 ; i++) {
+    //     n = + prompt("nhập số thứ " + i);
+    //     display += n +","
+    //     if (max<n){
+    //         max =n;
+    //     }
+    // }
+    // document.write("dãy số vừa nhập: "+ display);
+    // document.write("số lớp nhất trong dãy số là :" +  max);
+
+    // for (let i = 0; i <100 ; i++) {
+    //     // khi tới 50 thì dừng vòng lặp=>break
+    //     document.write(i +"<br>");
+    //     if (i===50){
+    //         break;
+    //     }
+    //
+    // }
+    // for (let i = 0; i <100 ; i++) {
+    //     // chỉ in ra các số không chia hết cho 10;
+    //     // if (i%10===0){
+    //     //     continue;
+    //     // }
+    //     // console.log(i);
+    //
+    //     if (i%10!==0){
+    //         console.log(i);
+    //     }
+    //
+    // }
+
+    // kiểm tra 1 số nguyên dương bất kỳ có phải là số nguyên tố hay không;
+
+    // let number = + prompt("nhập số nguyên dương")
+    // let count=0;
+    // for (let i = 2 ;i <=number ; i++) {
+    //     if (number%i===0){
+    //         // đếm số lần chia hết
+    //         count++;
+    //     }
+    // }
+    // if (count===1){
+    //     alert(number +": là số nguyên tố");
+    // }else {
+    //     alert(number +": KHÔNG PHẢI là số nguyên tố");
+    // }
+    //
+
+    for (let row = 1; row <=100 ; row++) {
+        for (let col = 1; col <100 ; col++) {
+            document.write("*");
+        }
+        document.write("<br>")
+
+    }
+
+
+
+</script>
+</body>
+</html>
