@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // kiểm tra 1 số nguyên dương bất kỳ có phải là số nguyên tố hay không;
+    // in ra 20 nguyên tố  đầu  tiến
+
+    let primeCount = 0;
+    let number = 2; // bắt đầu tìm từ 2
+    while (primeCount < 20) {
+        // kiểm tra number có phải là snt?
+        // nếu là số nguyên tố thì in ra + primeCount++;
+        let flag = true;
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            document.write(number+ "<br>");
+            primeCount++;
+        }
+
+        number++;
+    }
+
+    // let count =0;
+    // let number = + prompt("nhập số nguyên dương");
+    // for (let i = 2 ;i <number ; i++) {
+    //     if (number%i===0){
+    //         // đếm số lần chia hết
+    //         count++;
+    //     }
+    // }
+    // if (count===0){
+    //     alert(number +": là số nguyên tố");
+    // }else {
+    //     alert(number +": KHÔNG PHẢI là số nguyên tố");
+    // }
+
+</script>
+</body>
+</html>
