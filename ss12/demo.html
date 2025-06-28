@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Cách1: sử dụng dấu ngoặc vuông []
+    // khai báo mảng chứa các số => đặt tên mảng phải là số nhiều
+    // let numbers = [10, 20, 20, 40];
+    // mảng chuỗi
+    // let cars = ["Honda", "Huyndai", "Yamaha"];
+    // mảng hỗn hợp
+    // let student = ["SV-101", "channh", 40, "Kon Tum"];
+    //Cách 2:  khai báo sử dụng từ khoá new Array;
+    let schools = new Array("BK", "SPKT", "DHSP", "KTKH");
+    // schools.push("DHKT")
+    // truy cập vào phần tử của mảng;
+    // alert("cars trước khi thay đổi:" +cars);
+    // cars[1] = "Vin Fast";
+    // alert("cars sau khi thay đổi:" +cars);
+    // alert("độ dài của mảng " + schools.length);
+    // alert(" phần tử cuối của mảng :" + schools[schools.length - 1])
+    // let numbers = new Array(10); // mảng có 10 phần tử
+    // alert(numbers.length);
+    // alert(numbers);
+    // alert(typeof numbers[0]);// undefined
+    //  alert(schools);
+    // thay đổi giá trị cho mảng
+    // for (let i = 0; i <schools.length ; i++) {
+    //     schools[i] = "DN-"+schools[i]
+    // }
+    // for (let i = 0; i <schools.length ; i++) {
+    //     document.write((i+1)+"."+schools[i] +"<br>");
+    // }
+    // duyệt tại vị trí bất kỳ
+    // for (let i = 0; i <schools.length/2; i++) {
+    //     document.write((i+1)+"."+schools[i] +"<br>");
+    // }
+    // duyêt ngược mảng
+
+    // for (let i = schools.length-1; 0<=i ; i--) {
+    //     document.write((i+1)+"."+schools[i] +"<br>");
+    // }
+    // for(let index in schools){
+    //     document.write(index);
+    // }
+    // for(let school of schools ){
+    //     school = "DN-"+school;
+    // }
+    // for(let school of schools ){
+    //     document.write( school +"<br>");
+    // }
+    // nhập  mảng từ bàn phím;
+
+    let n = +prompt("nhập độ dài của mảng"); // nhập n >0
+    // nhập từng phần tử cho mảng;
+    let array = new Array(n);
+    for (let i = 0; i <array.length ; i++) {
+        array[i] = + prompt(`nhập phần tử thứ ${i}:`)
+    }
+    alert(array.indexOf(5));// trả về index
+    alert(array.includes(5));// trả về true/false ( kiểm số 5 có trong mảng hay không)
+
+
+    array.push(100);
+    alert(array);
+    // xử lý yêu cầu => tính trung bình cộng các phần tử trong mảng;
+    // tim giá trị lớn nhất trong mảng;
+    let sum =0;
+    let max = array[0];
+    for (let i = 0; i <array.length ; i++) {
+        sum+=array[i];
+        if (max<array[i]){
+            max = array[i];
+        }
+    }
+    alert("giá trị lớn nhất trong mảng "+ max)
+    alert("giá trị trung bình của các phần tử : "+ sum/array.length);
+</script>
+</body>
+</html>
