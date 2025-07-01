@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let array = [2,3,41,6,9,7,7,3];
+    // [2,3,41,6,9,7,7,3];
+    // i =5;=>6
+    // [2,3,41,6,9,7,3,0];
+
+    // let v = +prompt("nhập giá trị v cần xoá");
+    // for (let i = 0; i <array.length ; i++) {
+    //     // kiểm tra v có tồn tại trong mảng hay ko?
+    //     if (array[i]===v){
+    //         // dịch chuyển các pt từ sau vị trí v tìm thây sang bên trái
+    //         for (let j = i; j <array.length-1 ; j++) {
+    //             array[j] = array[j+1];
+    //         }
+    //         // gán gia trị cuối mảng bằng 0
+    //         array[array.length-1] = 0;
+    //         i--;
+    //     }
+    // }
+    // alert(array)
+
+    // một method làm việc với mảng
+    // unShift, shift, push, pop, splice(index, sô lượng, phần tử cần thêm mới)
+    // let numbers = [2,45,56,100,7];
+    // xoá phần tử tại index bằng 2 => xoá 56
+    // numbers.splice(2,1);  // xoá một phần tử bắt đầu từ index =2
+    // chèn phần tử 100 vao vị trí index =1 => chèn vào vị trí số 45
+    // numbers.splice(1,0,100); // 0: không xoá
+    // sắp xếp;
+    // numbers.sort(function (a,b){
+    //     return b-a;
+    // });
+
+    // function compare(a,b){
+    //     return a-b;
+    // }
+    // numbers.sort(compare);
+
+    // numbers.sort((a,b)=>a-b);
+    // alert(numbers);
+
+    // Bài 6:
+    // Viết chương trình nhập vào một mảng ký tự,
+    //     tìm tất cả các ký tự '-' trong mảng và thay thế chúng bằng ký tự '_'.
+   let mangKyTu = ['a','1','0','-','e'];
+
+    // for (let i = 0; i <mangKyTu.length ; i++) {
+    //     if (mangKyTu[i]==='-'){
+    //         mangKyTu[i] ='_';
+    //     }
+    // }
+    // alert(mangKyTu)
+    // let result =mangKyTu.indexOf('5');
+    // alert(result);
+
+    // mảng 2 chiều: làm mảng 1 chiều mà các phần tử bên trong là mảng 1 chiều
+
+    let array =[
+        [2,3,4,4],
+        [3,6,5,9],
+        [6,7,8,7],
+        [1,5,8,5]
+    ]
+    // tính tổng các các phần tử nằm trên đường chéo.
+
+    // duyệt mảng 2 chiều dùng 2 vòng lặp for lồng nhau
+    for (let i = 0; i <array.length ; i++) {
+        for (let j = 0; j <array[i].length ; j++) {
+            document.write(array[i][j])
+        }
+        document.write("<br>");
+    }
+
+    // tính tổng
+    // let sum =0;
+    // for (let i = 0; i <array.length ; i++) {
+    //     for (let j = 0; j <array[i].length ; j++) {
+    //        if (i===j||(i+j===array.length-1)){
+    //            sum+=array[i][j];
+    //        }
+    //     }
+    // }
+    // alert(sum)
+
+    // tính tổng các phần tử là số nguyên tố;
+    let sum =0;
+    for (let i = 0; i <array.length ; i++) {
+        for (let j = 0; j <array[i].length ; j++) {
+            // kiểm array[i][j] có phải là số nguyên tố hay không?
+            if (isPrime(array[i][j])){
+               sum+= array[i][j];
+            }
+        }
+    }
+     alert(sum);
+
+    // viết hàm kiểm tra một số có phải là snt? => trả về true/false
+    function isPrime(number){
+        if (number<2){
+            return false;
+        }
+        for (let i = 2; i <number ; i++) {
+            if (number%i===0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+</script>
+</body>
+</html>
