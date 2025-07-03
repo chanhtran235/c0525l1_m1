@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id = "n1">
+<input id = "n2">
+<button onclick="tinhTongInput()">Tổng</button>
+<button >Show</button>
+<script>
+    // gọi hàm
+
+    // showMessage('VN');
+    // định nghĩa hàm
+    // function showMessage(mess){
+    //     alert("Hello world "+ mess)
+    // }
+    let x = + prompt("nhập x");
+    let y = + prompt("nhập y");
+
+    sum(x,y);
+    sum(10,20);
+
+    function tinhTongInput(){
+        let n1 = +document.getElementById("n1").value;
+        let n2 = +document.getElementById("n2").value;
+        sum(n1,n2);
+    }
+
+    function sum(a,b){
+        alert("tổng là :"+(a+b));
+    }
+
+</script>
+</body>
+</html>
