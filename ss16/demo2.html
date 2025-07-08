@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class MyDate {
+        day;
+        month;
+        year;
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        getDay(){
+            return this.day;
+        }
+        setDay(day){
+            this.day = day;
+        }
+        setDate(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+         setDayAndMonth(day, month){
+             this.day = day;
+             this.month = month;
+         }
+         toString(){
+            return `${this.day}/${this.month}/${this.year}`
+         }
+    }
+
+    let date1 = new MyDate(10,12,2025);
+    date1.setDay(11);
+    date1.setDate("02","03","2025");
+    date1.setDayAndMonth(20,11)
+    alert(date1.toString());
+    alert(date1.toString());
+    alert(date1.toString());
+
+</script>
+</body>
+</html>

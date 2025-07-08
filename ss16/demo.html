@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // sử dụng function tạo class
+
+    let SinhVien = function (id, name, address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.study = function (){
+            console.log("sinh viên " + this.name + " đang học môn " + subject);
+        }
+    }
+
+    let sv1 = new SinhVien(1,"Tiến", "VN");
+
+    // sử dụng từ khoá class của ES6( Version của js 2015)
+    class Student {
+        id;
+        name;
+        address;
+
+        // làm một method (function) đặc biệt để khởi  tạo đối tượng.
+        constructor(id, name, address) {
+            this.id = id;
+            this.name = name;
+            this.address = address;
+        }
+
+        // method ( hành vi ) bình thường
+         study(subject) {
+            console.log("sinh viên " + this.name + " đang học môn " + subject);
+        }
+    }
+
+    // tạo đối tượng  sinh viên từ class Student
+    let sinhVien1 = new Student(1, "chánh", "ĐN");
+    let sinhVien2 = new Student(2, "hoa", "ĐN");
+    sinhVien1.study("Toán")
+
+
+    // tạo 1 đối tượng trực tiếp
+    // let student1 = {
+    //   id: 1,
+    //   name: "chánh",
+    //   address: "ĐN",
+    //   study: function (subject){
+    //     console.log("sinh viên "+ this.name +  " đang học môn "+ subject);
+    //   }
+    // }
+    // let studentCodegym1 = {
+    //     id: 2,
+    //     name: "Hải",
+    //     address: "QN",
+    //     study: function (subject){
+    //         console.log("sinh viên "+ this.name +  " đang học môn "+ subject);
+    //     }
+    // }
+    // student1.name = "Hoa"
+    // alert(student1.name);
+    // student1.study("JAVA");
+</script>
+</body>
+</html>
