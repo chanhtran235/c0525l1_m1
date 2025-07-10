@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // class cha
+  class Animal{
+    constructor(name,speed, weight) {
+      this.name = name;
+      this.speed = speed;
+      this.weigth= weight;
+    }
+    say(message){
+      // pt trừu tượng (không kêu cục thể như thế nào.
+    }
+  }
+  class Rat extends Animal{
+    constructor(name,speed, weight, status) {
+     super(name,speed,weight);
+     this.status = status;
+    }
+    say(message) {
+      console.log(this.name +"-chit chit :"+ message);
+    }
+
+  }
+  class Cat extends Animal{
+    constructor(name,speed,weight) {
+      super(name,speed,weight);
+    }
+    say(message){
+      console.log("meo meo:  "+ message);
+    }
+
+    eat(chuot){
+      if (chuot.status=='song'){
+        this.weigth += chuot.weigth;
+      }else {
+        this.say("chết rồi không ăn");
+      }
+    }
+    catch(mouse){
+      if (mouse.speed>=this.speed){
+        mouse.say("Đố bắt được tao");
+      }else {
+        this.say("Tao bắt được rồi");
+        this.say("Ăn thôi");
+        this.eat(mouse)
+      }
+    }
+  }
+
+  // kịch bản
+  // tạo 1 con chuột
+  let jerry1 = new Rat("JERRY1",0,1,"chet");
+  let jerry2 = new Rat("JERRY2",5,1,"song");
+  let jerry3 = new Rat("JERRY3",8,1,"song");
+  let tom = new Cat("TOM",7,10);
+  tom.catch(jerry1);
+  tom.catch(jerry2);
+  tom.catch(jerry3);
+  alert(tom.weigth);
+</script>
+</body>
+</html>
